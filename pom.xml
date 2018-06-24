@@ -15,7 +15,7 @@
     </parent>
 
 
-
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -43,6 +43,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>walkrank.WalkRank</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
