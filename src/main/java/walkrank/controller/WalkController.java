@@ -1,5 +1,7 @@
 package walkrank.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import walkrank.model.Input;
@@ -10,6 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class WalkController {
+    private static final Logger logger = LogManager.getLogger(WalkController.class);
 
 
     @Autowired
@@ -17,8 +20,7 @@ public class WalkController {
 
     @PostMapping("/hello")
     public Output hello(@RequestBody Input in) {
-
-        System.out.println("hello");
+        logger.info("hello log4j2");
         Output res = service.hello();
         return res;
     }
